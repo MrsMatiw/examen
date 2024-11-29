@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calcular área de un rectángulo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Base</ion-label>
+        <ion-input type="number" [(ngModel)]="base"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Altura</ion-label>
+        <ion-input type="number" [(ngModel)]="altura"></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="calcularArea()">Calcular</ion-button>
+      <ion-item *ngIf="area">
+        <ion-label>El área es: {{ area }}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="rectangulo-container"> 
+    <div class="rectangulo" [ngStyle]="{'width.px': base * escala, 'height.px': altura * escala}"></div> 
+  </div>
+
+</ion-content>
